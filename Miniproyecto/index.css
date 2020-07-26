@@ -126,18 +126,12 @@ picture img {
 }
 
 button {
-    border-radius: 8px;
-    margin: 0;
+    border-radius: 5px;
+    width: 10%;
+    height: auto;
     font-size: 2vw;
     line-height: inherit;
-    background: #10C8FF;
-}
-
-img#cancelar {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    left: 350px;
+    background: #10c8ff;
 }
 
 #separador {
@@ -147,16 +141,27 @@ img#cancelar {
 /*RULETA*/
 
 #segundo {
-    background: linear-gradient(to bottom, blue, white 80%, orange);
+    background-image: url("https://i.pinimg.com/originals/24/ba/b1/24bab1e731722fa852da8b6b088a112e.jpg" );
+    background-size: cover;
     display: none;
-    width: 450px;
-    height: auto;
+    width: 44%;
+    height: 80%;
     color: white;
     padding: 33px;
-    border-radius: 22px;
+    border-radius: 20px;
     position: absolute;
-    left: 34%;
-    top: 25%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+img#cancelar {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 350px;
 }
 
 .vara {
@@ -172,13 +177,20 @@ img#cancelar {
     z-index: 1000;
 }
 
-img {
-    width: 350px;
+#ruleta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    width: 50%;
     height: auto;
     z-index: 100;
     transition: all 5s;
     border-radius: 100%;
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 #notif {
@@ -187,6 +199,5 @@ img {
     font-weight: bold;
     width: 300px;
     padding: 15px 20px 20px;
-    font-family: "Comic Sans MS";
 }
 
