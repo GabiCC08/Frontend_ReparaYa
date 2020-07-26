@@ -13,7 +13,7 @@ var btnInicio = document.getElementById("reset");
 //Funcion para que en tablero nos muestre la palabra al azar CHECK!!!!!
 function generaPalabra() {
   rand = (Math.random() * 20).toFixed(0); // Se utiliza en randon para darme una palabra al azar el cual se va a multiplicar por las posiciones en total son 20 datos
-  palabra = palabras[0].toUpperCase(); // Aqui me devuelve la palabra pero en mayuscula
+  palabra = palabras[rand].toUpperCase(); // Aqui me devuelve la palabra pero en mayuscula
   console.log(palabra);
 }
 
