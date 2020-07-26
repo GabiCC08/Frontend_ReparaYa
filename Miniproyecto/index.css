@@ -4,12 +4,13 @@ body{
     background-position: 0 0;
     background-size: cover;
 }
+.container{
+    width: 80%;
+}
 #primero{
 	background: white;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     opacity: 0.85;
-    width: 1250px;
-    height: auto;
 	border-radius: 10px;
     padding: 10px;
     margin: 0px auto;
