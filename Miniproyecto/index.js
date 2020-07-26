@@ -1,37 +1,36 @@
-// Declaracion de las varibales
-var palabras = ["condicion", "ordenador", "laurel", "parque", "rueda", "guanabana", "futbol", "eucalipto",
+// Declaracion de las variables de la seccion del juego
+const palabras = ["condicion", "ordenador", "laurel", "parque", "rueda", "guanabana", "futbol", "eucalipto",
   "chimborazo", "relampago", "jirafa", "luxemburgo", "uruguay", "ilustracion", "excursion", "cariño",
   "pastel", "colegio", "carrera", "mermelada"];
-var palabra = ""; //es la palabra asiganda al azar
-var rand; // para buscar una palabra randomica
-var oculta = [];
-var hueco = document.getElementById("palabra");
-var cont = 6; //contador
-var buttons = document.getElementsByClassName('letra');
-var btnInicio = document.getElementById("reset");
+let palabra = ""; //Palabra asignada por el rand
+let rand;
+const oculta = [];
+const hueco = document.getElementById("palabra");
+let cont = 6; //Contador intentos
+const buttons = document.getElementsByClassName('letra');
+const btnInicio = document.getElementById("reset");
 
-//Funcion para que en tablero nos muestre la palabra al azar CHECK!!!!!
+//Selecciona una palabra al azar
 function generaPalabra() {
-  rand = (Math.random() * 20).toFixed(0); // Se utiliza en randon para darme una palabra al azar el cual se va a multiplicar por las posiciones en total son 20 datos
-  palabra = palabras[rand].toUpperCase(); // Aqui me devuelve la palabra pero en mayuscula
-  console.log(palabra);
+  rand = (Math.random() * 20).toFixed(0);
+  palabra = palabras[rand].toUpperCase();
 }
 
-//Funcion para que nos pinte lineas en vez de la palabra Ej Futbol _ _ _ _ _ _
+//Crea el arreglo de guiones bajos
 function pintarGuiones(num) {
-  for (var i = 0; i < num; i++) {
+  for (let i = 0; i < num; i++) {
     oculta[i] = "_";
   }
   console.log(oculta)
   hueco.innerHTML = oculta.join(""); //me escribe en el html la cadena la cual contiene las lineas azules depende de la palabra
 }
 
-//Funcion para que nos de el abecedario
+//Crea el abecedario
 function generaABC (a,z) {
   const elemAbc = document.getElementById("abcdario");
   elemAbc.innerHTML="";
-  var i = a.charCodeAt(0), j = z.charCodeAt(0);
-  var letra = "";
+  let i = a.charCodeAt(0), j = z.charCodeAt(0);
+  let letra = "";
   for( ; i<=j; i++) {
     letra = String.fromCharCode(i).toUpperCase();
     elemAbc.innerHTML += "<button value='" + letra +
@@ -41,11 +40,12 @@ function generaABC (a,z) {
     }
   }
 }
-//Funcion para cuando Gane o Pierda
+
+//...
 function intento(letra) {
   //document.getElementById(letra).disabled = true;
   if(palabra.indexOf(letra) != -1) {
-    for(var i=0; i<palabra.length; i++) {
+    for(let i=0; i<palabra.length; i++) {
       if(palabra[i]==letra){
         oculta[i] = letra;
       }
@@ -65,17 +65,19 @@ function intento(letra) {
     document.getElementById("acierto").className = ""; 
   }, 750);
 }
+
 function cerrar() {
      document.getElementById("segundo").style.display="none";
 }
 
-//Funcion si se acabo o no 
+//...
 function compruebaFin() {
+  let i;
   if( oculta.indexOf("_") == -1 ) {
     document.getElementById("msg-final").innerHTML = "Felicidades !!";
     document.getElementById("msg-final").className += "zoom-in";
     document.getElementById("palabra").className += " encuadre";//className obtine y establece el valor del atributo de la clase del elemento especificado
-    for (var i = 0; i < buttons.length; i++) {
+    for (i = 0; i < buttons.length; i++) {
       buttons[i].disabled = true;
     }
     document.getElementById("reset").innerHTML = "Empezar";
@@ -86,15 +88,15 @@ function compruebaFin() {
     document.getElementById("dibujo_ahorcado").style.display="none";
     document.getElementById("segundo").style.display="block";
 
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].disabled = true; //Desactiva el boton despues de precionarlo
+    for (i = 0; i < buttons.length; i++) {
+      buttons[i].disabled = true; //Inhabilita los botones
     }
     document.getElementById("reset").innerHTML = "Empezar";
-    btnInicio.onclick = function () { location.reload() }; // el reload me sirve para volver a cargar el juego o una nueva palabra en menos palabra
+    btnInicio.onclick = function () { location.reload() };
   }
 }
 
-//Funcion para reiniciar el juego
+//...
 function inicio() {
   generaPalabra();
   pintarGuiones(palabra.length);
@@ -104,16 +106,14 @@ function inicio() {
 }
 window.onload = inicio();
 
-//RULETA
+//--------RULETA--------
 const ruleta = document.querySelector("#ruleta");
 ruleta.addEventListener("click",girar);
-
 function girar(){
   let rand = Math.random()*7200;
   console.log("Rand de girar"+rand)
   calcular(rand);
 }
-
 function calcular(rand){
   valor = rand / 360;
   console.log("Valor1"+valor)
@@ -148,3 +148,4 @@ function calcular(rand){
         break;
     }},5000);
 }
+
