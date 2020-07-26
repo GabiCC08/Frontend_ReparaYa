@@ -1,6 +1,6 @@
 // Declaracion de las varibales
-var palabras = ["pollo", "ordenador", "laurel", "parque", "rueda", "Guanabana", "Futbol", "eucalipto",
-  "chimborazo", "relampago", "jirafa", "luxemburgo", "uruguay", "ilustracion", "excursion", "empanadilla",
+var palabras = ["condicion", "ordenador", "laurel", "parque", "rueda", "guanabana", "futbol", "eucalipto",
+  "chimborazo", "relampago", "jirafa", "luxemburgo", "uruguay", "ilustracion", "excursion", "cariño",
   "pastel", "colegio", "carrera", "mermelada"];
 var palabra = ""; //es la palabra asiganda al azar
 var rand; // para buscar una palabra randomica
@@ -13,7 +13,7 @@ var btnInicio = document.getElementById("reset");
 //Funcion para que en tablero nos muestre la palabra al azar CHECK!!!!!
 function generaPalabra() {
   rand = (Math.random() * 20).toFixed(0); // Se utiliza en randon para darme una palabra al azar el cual se va a multiplicar por las posiciones en total son 20 datos
-  palabra = palabras[rand].toUpperCase(); // Aqui me devuelve la palabra pero en mayuscula
+  palabra = palabras[0].toUpperCase(); // Aqui me devuelve la palabra pero en mayuscula
   console.log(palabra);
 }
 
