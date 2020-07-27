@@ -130,28 +130,28 @@ function calcular(rand) {
     setTimeout(() => {
         switch (true) {
             case valor > 0 && valor <= 45:
-                document.querySelector("#notif").innerHTML = "Tu penintencia es: Hacer 10 sentadillas";
+                document.querySelector("#notif").innerHTML = "HAZ 15 SENTADILLAS";
                 break;
             case valor > 45 && valor <= 90:
-                document.querySelector("#notif").innerHTML = "Tu penintencia es: Hacer 15s de plancha";
+                document.querySelector("#notif").innerHTML = "HAZ 25s DE PLANCHA";
                 break;
             case valor > 90 && valor <= 135:
-                document.querySelector("#notif").innerHTML = "Tu penintencia es: Hacer 10 abdominales";
+                document.querySelector("#notif").innerHTML = "HAZ 25 ABDOMINALES";
                 break;
             case valor > 135 && valor <= 180:
-                document.querySelector("#notif").innerHTML = "Tu penintencia es: Hacer 15 flexiones";
+                document.querySelector("#notif").innerHTML = "HAZ 15 FLEXIONES DE PECHO";
                 break;
             case valor > 180 && valor <= 225:
-                document.querySelector("#notif").innerHTML = "Tu penintencia es: Hacer 20 sentadillas";
+                document.querySelector("#notif").innerHTML = "HAZ 20 SENTADILLAS";
                 break;
             case valor > 225 && valor <= 270:
-                document.querySelector("#notif").innerHTML = "Tu penintencia es: Hacer 25s de plancha";
+                document.querySelector("#notif").innerHTML = "HAZ 40s DE PLANCHA";
                 break;
             case valor > 270 && valor <= 315:
-                document.querySelector("#notif").innerHTML = "Tu penintencia es: Hacer 20 abdominales";
+                document.querySelector("#notif").innerHTML = "HAZ 20 ABDOMINALES";
                 break;
             case valor > 315 && valor <= 360:
-                document.querySelector("#notif").innerHTML = "Tu penintencia es: Hacer 10 flexiones";
+                document.querySelector("#notif").innerHTML = "HAZ 10 FLEXIONES DE PECHO";
                 break;
         }
     }, 5000);

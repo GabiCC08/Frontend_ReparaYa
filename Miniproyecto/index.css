@@ -11,6 +11,7 @@ body {
 
 .container {
     width: 90%;
+    height: 90%;
 }
 
 #primero {
@@ -31,10 +32,11 @@ body {
 h1.titulo {
     color: white;
     text-align: center;
-    font-size: 5vw;
+    font-size: 4.5vw;
     width: auto;
     height: auto;
     background: linear-gradient(180deg, #FEB916, #C86026);
+    margin-top: 20px;
     margin-bottom: 25px;
 }
 
@@ -70,7 +72,7 @@ h1#msg-final {
 }
 
 .palabra {
-    font-size: 3vw;
+    font-size: 2.5vw;
     margin: 0 auto 25px auto;
     text-align: center;
     color: royalblue;
@@ -92,7 +94,7 @@ h1#msg-final {
 }
 
 h3{
-    font-size: 3vw;
+    font-size: 2vw;
 }
 
 h3 span {
@@ -100,7 +102,7 @@ h3 span {
 }
 
 .letra:disabled {
-    color: rgba(255, 0, 0, 0.5);
+    color: rgb(104, 104, 104);
 }
 
 picture img {
@@ -129,10 +131,10 @@ button {
     border-radius: 5px;
     width: 15%;
     height: auto;
-    font-size: 2vw;
+    font-size: 1.5vw;
     line-height: inherit;
     background: #10c8ff;
-    color:#ffff;
+    color: #ffffff;
     font-weight: bold;
     text-shadow: black 0.1em 0.1em 0.2em
 }
@@ -169,12 +171,12 @@ img#cancelar {
 }
 
 .vara {
-    height: 40px;
-    width: 10px;
+    height: 25%;
+    width: 12px;
     background-color: #939393;
     margin: auto;
     position: relative;
-    top: -18%;
+    top: -20%;
     left: 0;
     right: 0;
     border-radius: 0px 0px 8px 8px;
@@ -204,7 +206,7 @@ img#cancelar {
     color: #ffffff;
     text-shadow: 0 0 0.2em #ff2000;
     position: absolute;
-    font-size: 2vw;
+    font-size: 1vw;
     font-weight: bold;
     padding: 5px;
 }
