@@ -141,7 +141,7 @@ button {
 /*RULETA*/
 
 #segundo {
-    background-image: url("https://i.pinimg.com/originals/24/ba/b1/24bab1e731722fa852da8b6b088a112e.jpg" );
+    background-image: url("img/fondo_ruleta.jpg" );
     background-size: cover;
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     display: none;
