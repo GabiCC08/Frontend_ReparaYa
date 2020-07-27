@@ -157,3 +157,4 @@ function calcular(rand) {
     }, 5000);
 }
 
+ //----------SELEC JUGADORES-----------

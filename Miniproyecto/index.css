@@ -127,11 +127,13 @@ picture img {
 
 button {
     border-radius: 5px;
-    width: 10%;
-    height: auto;
+    width: 35px;
+    height: 35px;
     font-size: 2vw;
     line-height: inherit;
     background: #10c8ff;
+    color:#ffff;
+    font-weight: bold;
 }
 
 #separador {
