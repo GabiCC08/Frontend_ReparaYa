@@ -127,13 +127,14 @@ picture img {
 
 button {
     border-radius: 5px;
-    width: 35px;
-    height: 35px;
+    width: 15%;
+    height: auto;
     font-size: 2vw;
     line-height: inherit;
     background: #10c8ff;
     color:#ffff;
     font-weight: bold;
+    text-shadow: black 0.1em 0.1em 0.2em
 }
 
 #separador {
@@ -145,6 +146,7 @@ button {
 #segundo {
     background-image: url("img/fondo_ruleta.jpg" );
     background-size: cover;
+    background-position: center;
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     display: none;
     width: 44%;
@@ -161,18 +163,20 @@ button {
 
 img#cancelar {
     position: absolute;
-    width: 60px;
-    height: 60px;
-    left: 350px;
+    width: 10%;
+    height: auto;
+    left: 85%;
 }
 
 .vara {
-    height: 70px;
-    width: 15px;
-    background-color: #aaa;
+    height: 40px;
+    width: 10px;
+    background-color: #939393;
     margin: auto;
     position: relative;
-    top: 10px;
+    top: -18%;
+    left: 0;
+    right: 0;
     border-radius: 0px 0px 8px 8px;
     border: 1px solid #000;
     border-top: 5px solid #000;
@@ -186,8 +190,7 @@ img#cancelar {
     right: 0;
     bottom: 0;
     margin: auto;
-
-    width: 50%;
+    width: 65%;
     height: auto;
     z-index: 100;
     transition: all 5s;
@@ -196,12 +199,13 @@ img#cancelar {
 }
 
 #notif {
-    color: #000000;
-    text-shadow: 0 0 0.2em #F87, 0 0 0.2em #F87;
+    background-color: rgba(16, 16, 16, 0.22);
+    border-radius: 50px;
+    color: #ffffff;
+    text-shadow: 0 0 0.2em #ff2000;
     position: absolute;
-    font-size: 18px;
+    font-size: 2vw;
     font-weight: bold;
-    width: 300px;
-    padding: 15px 20px 20px;
+    padding: 5px;
 }
 
