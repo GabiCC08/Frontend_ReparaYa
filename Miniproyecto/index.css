@@ -1,7 +1,8 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: 'Questrial', sans-serif;
     background-image: url("https://cdn.pixabay.com/photo/2017/07/10/23/43/question-mark-2492009_1280.jpg");
@@ -42,7 +43,7 @@ h1.titulo {
 h1#msg-final {
     font-size: 4vw;
     text-align: center;
-    background: linear-gradient(yellow,red);
+    background: linear-gradient(yellow, red);
     -webkit-background-clip: text;
     color: transparent;
     font-weight: bold;
@@ -55,17 +56,22 @@ h1#msg-final {
     transform: scale(1) !important;
 }
 
-#btnreset{
+#btnreset {
     width: 40%;
     height: auto;
     background: #1D1D1D;
-    color:white;
+    color: white;
     padding: 1%;
     font-size: 0.8vw;
+    text-shadow: 0px 0px;
 }
-.seccion{
-    flex-grow: 2; flex-shrink: 1; flex-basis: 200px;
+
+.seccion {
+    flex-grow: 2;
+    flex-shrink: 1;
+    flex-basis: 200px;
 }
+
 .palabra {
     font-size: 2.5vw;
     text-align: center;
@@ -73,12 +79,14 @@ h1#msg-final {
     text-transform: uppercase;
     letter-spacing: 4px;
 }
-.d-flex{
+
+.d-flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
 }
+
 .flex-row {
     align-items: center;
     display: flex;
@@ -87,17 +95,13 @@ h1#msg-final {
     margin: 10px auto;
 }
 
-h3{
+h3 {
     font-size: 2vw;
     text-align: center;
 }
 
 h3 span {
     color: #22AFE3;
-}
-
-.letra:disabled {
-    color: rgb(104, 104, 104);
 }
 
 img.sman {
@@ -132,7 +136,18 @@ button {
     background: #10c8ff;
     color: #ffffff;
     font-weight: bold;
-    text-shadow: black 0.1em 0.1em 0.2em
+    text-shadow: 1px 2px #999;
+}
+
+
+.letra:disabled {
+    color: rgb(104, 104, 104);
+    text-shadow: 0px 0px;
+}
+
+.btn_invalido {
+    color: rgb(104, 104, 104);
+    text-shadow: 0px 0px;
 }
 
 #separador {
@@ -142,17 +157,19 @@ button {
 #acierto {
     font-size: 1vw;
 }
-.verde{
+
+.verde {
     color: lawngreen;
 }
-.rojo{
+
+.rojo {
     color: orangered;
 }
 
 /*RULETA*/
 
 #segundo {
-    background-image: url("img/fondo_ruleta3.jpg" );
+    background-image: url("img/fondo_ruleta3.jpg");
     background-size: cover;
     background-position: center;
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);

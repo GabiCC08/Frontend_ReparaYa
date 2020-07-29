@@ -10,6 +10,7 @@ let cont = 6; //Contador intentos
 const buttons = document.getElementsByClassName('letra');
 const btnInicio = document.getElementById("btnreset");
 
+
 //Selecciona una palabra al azar
 function generaPalabra() {
     rand = (Math.random() * 20).toFixed(0);
@@ -43,7 +44,8 @@ function generaABC(a, z) {
 
 //...
 function intento(letra) {
-    //document.getElementById(letra).disabled = true;
+    document.getElementById(letra).disabled = true;
+    document.getElementById(letra).className="btn_invalido";
     if (palabra.indexOf(letra) != -1) {
         for (let i = 0; i < palabra.length; i++) {
             if (palabra[i] == letra) {
@@ -53,7 +55,6 @@ function intento(letra) {
         hueco.innerHTML = oculta.join("");
         document.getElementById("acierto").className += "verde";
         document.getElementById("acierto").innerHTML = "Correcto";
-
     } else {
         cont--;
         document.getElementById("intentos").innerHTML = cont;
@@ -83,9 +84,9 @@ function compruebaFin() {
             buttons[i].disabled = true;
         }
         btnInicio.innerHTML = "Empezar";
-        btnInicio.onclick = function () {
-            location.reload()
-        };
+        btnInicio.onclick = function(){
+            location.reload();};
+
     } else if (cont == 0) {
         document.getElementById("acierto").innerHTML = "";
         document.getElementById("msg-final").innerHTML = "JUEGO FINALIZADO";
@@ -97,9 +98,8 @@ function compruebaFin() {
             buttons[i].disabled = true; //Inhabilita los botones
         }
         btnInicio.innerHTML = "Empezar";
-        btnInicio.onclick = function () {
-            location.reload()
-        };
+        btnInicio.onclick = function(){
+            location.reload();};
     }
 }
 
@@ -159,5 +159,3 @@ function calcular(rand) {
         }
     }, 5000);
 }
-
- //----------SELEC JUGADORES-----------
