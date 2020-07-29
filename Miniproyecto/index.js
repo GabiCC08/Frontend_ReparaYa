@@ -8,7 +8,7 @@ const oculta = [];
 const hueco = document.getElementById("palabra");
 let cont = 6; //Contador intentos
 const buttons = document.getElementsByClassName('letra');
-const btnInicio = document.getElementById("reset");
+const btnInicio = document.getElementById("btnreset");
 
 //Selecciona una palabra al azar
 function generaPalabra() {
@@ -51,13 +51,14 @@ function intento(letra) {
             }
         }
         hueco.innerHTML = oculta.join("");
-        document.getElementById("acierto").innerHTML = "Correcto!";
-        document.getElementById("acierto").className += "acierto verde";
+        document.getElementById("acierto").className += "verde";
+        document.getElementById("acierto").innerHTML = "Correcto";
+
     } else {
         cont--;
         document.getElementById("intentos").innerHTML = cont;
+        document.getElementById("acierto").className += "rojo";
         document.getElementById("acierto").innerHTML = "Incorrecto";
-        document.getElementById("acierto").className += "acierto rojo";
         document.getElementById("image" + cont).className += "fade-in";
     }
     compruebaFin();
@@ -74,18 +75,20 @@ function cerrar() {
 function compruebaFin() {
     let i;
     if (oculta.indexOf("_") == -1) {
-        document.getElementById("msg-final").innerHTML = "Felicidades !!";
+        document.getElementById("msg-final").innerHTML = "FELICIDADES";
+        document.getElementById("acierto").innerHTML = "";
         document.getElementById("msg-final").className += "zoom-in";
-        document.getElementById("palabra").className += " encuadre";//className obtine y establece el valor del atributo de la clase del elemento especificado
+        document.getElementById("palabra").className += " encuadre";
         for (i = 0; i < buttons.length; i++) {
             buttons[i].disabled = true;
         }
-        document.getElementById("reset").innerHTML = "Empezar";
+        btnInicio.innerHTML = "Empezar";
         btnInicio.onclick = function () {
             location.reload()
         };
     } else if (cont == 0) {
-        document.getElementById("msg-final").innerHTML = "Juego Finalizado";
+        document.getElementById("acierto").innerHTML = "";
+        document.getElementById("msg-final").innerHTML = "JUEGO FINALIZADO";
         document.getElementById("msg-final").className += "zoom-in";
         document.getElementById("dibujo_ahorcado").style.display = "none";
         document.getElementById("segundo").style.display = "block";
@@ -93,7 +96,7 @@ function compruebaFin() {
         for (i = 0; i < buttons.length; i++) {
             buttons[i].disabled = true; //Inhabilita los botones
         }
-        document.getElementById("reset").innerHTML = "Empezar";
+        btnInicio.innerHTML = "Empezar";
         btnInicio.onclick = function () {
             location.reload()
         };

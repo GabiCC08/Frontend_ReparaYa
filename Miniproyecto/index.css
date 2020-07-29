@@ -19,8 +19,7 @@ body {
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     border-radius: 35px;
     opacity: 0.85;
-    padding: 35px;
-    margin: 0px auto;
+    padding: 5% 5% 3% 5%;
 }
 
 .main-container {
@@ -41,60 +40,56 @@ h1.titulo {
 }
 
 h1#msg-final {
+    font-size: 4vw;
     text-align: center;
-    color: crimson;
+    background: linear-gradient(yellow,red);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
     transition: all .5s ease;
     transform: scale(0);
-    min-height: 50px;
-    margin-bottom: 0;
+    margin: 2%;
 }
 
 .zoom-in {
     transform: scale(1) !important;
 }
 
-#acierto {
-    text-align: center;
-    min-height: 24px;
-    transform: scale(0);
+#btnreset{
+    width: 40%;
+    height: auto;
+    background: #1D1D1D;
+    color:white;
+    padding: 1%;
+    font-size: 0.8vw;
 }
-
-.acierto {
-    animation: zoomInOut 1s ease;
+.seccion{
+    flex-grow: 2; flex-shrink: 1; flex-basis: 200px;
 }
-
-.rojo {
-    color: red;
-}
-
-.verde {
-    color: green;
-}
-
 .palabra {
     font-size: 2.5vw;
-    margin: 0 auto 25px auto;
     text-align: center;
     color: royalblue;
     text-transform: uppercase;
     letter-spacing: 4px;
 }
-
+.d-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
 .flex-row {
+    align-items: center;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 10px auto;
 }
 
-
-.col {
-    width: 50%;
-    text-align: center;
-}
-
 h3{
     font-size: 2vw;
+    text-align: center;
 }
 
 h3 span {
@@ -105,11 +100,11 @@ h3 span {
     color: rgb(104, 104, 104);
 }
 
-picture img {
+img.sman {
     position: absolute;
-    top: -20%;
+    top: 23%;
     left: 20%;
-    width: 50%;
+    width: 16%;
 }
 
 #image5, #image4, #image3,
@@ -128,8 +123,9 @@ picture img {
 }
 
 button {
+    float: right;
     border-radius: 5px;
-    width: 15%;
+    width: 10%;
     height: auto;
     font-size: 1.5vw;
     line-height: inherit;
@@ -143,16 +139,26 @@ button {
     height: 95px;
 }
 
+#acierto {
+    font-size: 1vw;
+}
+.verde{
+    color: lawngreen;
+}
+.rojo{
+    color: orangered;
+}
+
 /*RULETA*/
 
 #segundo {
-    background-image: url("img/fondo_ruleta.jpg" );
+    background-image: url("img/fondo_ruleta3.jpg" );
     background-size: cover;
     background-position: center;
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     display: none;
-    width: 44%;
-    height: 80%;
+    width: 58%;
+    height: 90%;
     padding: 33px;
     border-radius: 20px;
     position: absolute;
@@ -192,7 +198,7 @@ img#cancelar {
     right: 0;
     bottom: 0;
     margin: auto;
-    width: 65%;
+    width: 58%;
     height: auto;
     z-index: 100;
     transition: all 5s;
@@ -201,13 +207,11 @@ img#cancelar {
 }
 
 #notif {
-    background-color: rgba(16, 16, 16, 0.22);
     border-radius: 50px;
     color: #ffffff;
     text-shadow: 0 0 0.2em #ff2000;
     position: absolute;
-    font-size: 1vw;
+    font-size: 1.4vw;
     font-weight: bold;
     padding: 5px;
 }
-
