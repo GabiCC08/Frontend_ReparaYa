@@ -64,6 +64,7 @@ h1#msg-final {
     padding: 1%;
     font-size: 0.8vw;
     text-shadow: 0px 0px;
+    letter-spacing: 0.8px;
 }
 
 .seccion {
@@ -75,7 +76,7 @@ h1#msg-final {
 .palabra {
     font-size: 2.5vw;
     text-align: center;
-    color: royalblue;
+    color: #2165AD;
     text-transform: uppercase;
     letter-spacing: 4px;
 }
@@ -136,7 +137,7 @@ button {
     background: #10c8ff;
     color: #ffffff;
     font-weight: bold;
-    text-shadow: 1px 2px #999;
+    text-shadow: 1px 1px #999;
 }
 
 
@@ -199,7 +200,7 @@ img#cancelar {
     background-color: #939393;
     margin: auto;
     position: relative;
-    top: -20%;
+    top: -18%;
     left: 0;
     right: 0;
     border-radius: 0px 0px 8px 8px;
@@ -231,4 +232,28 @@ img#cancelar {
     font-size: 1.4vw;
     font-weight: bold;
     padding: 5px;
+}
+
+@media only screen and (max-width: 585px) {
+    #btnreset{
+        width: 25%;
+        font-size: 1vw;
+    }
+    #primero{
+        padding-top: 25%;
+    }
+    img.sman{
+        margin-top: -5%;
+        width: 20%;
+    }
+    #segundo{
+        width: 70%;
+        height: 80%;
+    }
+    #ruleta{
+        width: 75%;
+    }
+    #notif{
+        font-size: 2vw;
+    }
 }

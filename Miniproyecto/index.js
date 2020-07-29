@@ -54,12 +54,12 @@ function intento(letra) {
         }
         hueco.innerHTML = oculta.join("");
         document.getElementById("acierto").className += "verde";
-        document.getElementById("acierto").innerHTML = "Correcto";
+        document.getElementById("acierto").innerHTML = "GENIAL";
     } else {
         cont--;
         document.getElementById("intentos").innerHTML = cont;
         document.getElementById("acierto").className += "rojo";
-        document.getElementById("acierto").innerHTML = "Incorrecto";
+        document.getElementById("acierto").innerHTML = "PRUEBA OTRA";
         document.getElementById("image" + cont).className += "fade-in";
     }
     compruebaFin();
