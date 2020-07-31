@@ -33,6 +33,7 @@ h1.titulo {
     color: white;
     text-align: center;
     font-size: 4.5vw;
+    font-weight: bold;
     width: auto;
     height: auto;
     background: linear-gradient(180deg, #FEB916, #C86026);

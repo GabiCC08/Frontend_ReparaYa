@@ -22,7 +22,7 @@ function pintarGuiones(num) {
     for (let i = 0; i < num; i++) {
         oculta[i] = "_";
     }
-    console.log(oculta)
+    //console.log(oculta)
     hueco.innerHTML = oculta.join(""); //me escribe en el html la cadena la cual contiene las lineas azules depende de la palabra
 }
 
@@ -53,6 +53,7 @@ function intento(letra) {
             }
         }
         hueco.innerHTML = oculta.join("");
+        console.log(hueco)
         document.getElementById("acierto").className += "verde";
         document.getElementById("acierto").innerHTML = "GENIAL";
     } else {
