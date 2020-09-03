@@ -2,7 +2,6 @@ import React from 'react';
 import SimpleHeader from "../components/SimpleHeader";
 import {Button, Col, Form, Input, Row} from "antd";
 import telefono from "../images/telefono.png";
-import GeneralFooter from "../components/GeneralFooter";
 import ubicacion from "../images/ubicacion.png";
 import mensajes from "../images/mensajes.png";
 
@@ -13,21 +12,21 @@ const Contact = () => (
             <h1 id='hFrm' style={{textAlign: 'Center'}}>CONTÁCTANOS</h1>
             <div id='content-parra'>
                 <p style={{margin:'0px'}}>
-                    Bienvenido a nuestro sitio web. Estamos contentos de atender su requerimiento.
+                    Bienvenido a nuestro sitio web. Estamos contentos de atender tu requerimiento.
                 </p>
                 <p>
-                    Su dirección de correo electrónico no será publicada. Los campos obligatorios están marcados.
+                    Tu dirección de correo electrónico no será publicada. Los campos obligatorios están marcados.
                 </p>
             </div>
             <Form>
                 <Row>
                     <Col span={15} className='contact-id'>
                         <Form.Item  name={['user', 'Name']} label="Nombre Completo"
-                                    rules={[{required: true}]}>
+                                    rules={[{required: true, message: 'Por favor, ingresa tu nombre completo.'}]}>
                             <Input/>
                         </Form.Item>
                         <Form.Item name={['user', 'Email']} label="Correo Electrónico"
-                                   rules={[{type: 'email', required: true}]}>
+                                   rules={[{type: 'email', required: true, message: 'Por favor, ingresa tu correo electrónico.'}]}>
                             <Input/>
                         </Form.Item>
                         <Form.Item name={['user', 'Number']} label="Número de teléfono"
@@ -38,7 +37,7 @@ const Contact = () => (
                                    rules={[{type: 'city', required: true}]}>
                             <Input/>
                         </Form.Item>
-                        <Form.Item name={['user', 'Asunto']} label="Asunto" rules={[{required: true}]}>
+                        <Form.Item name={['user', 'Asunto']} label="Asunto" rules={[{required: true, message: 'Por favor, llena el campo de texto.'}]}>
                             <Input.TextArea/>
                         </Form.Item>
                         <Form.Item wrapperCol={{offset: 8}}>
@@ -61,7 +60,6 @@ const Contact = () => (
             </Form>
 
         </div>
-        <GeneralFooter/>
     </div>
 );
 
