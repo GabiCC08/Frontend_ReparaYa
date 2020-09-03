@@ -14,9 +14,9 @@ module.exports = {
                             '@warning-color': '#faad14', // warning state color
                             '@error-color': '#f5222d', // error state color
                             '@font-size-base': '15px', // major text font size
-                            '@heading-color': 'rgba(106, 107, 111, 0.85)', // heading text color
+                            '@heading-color': 'rgba(110,110,110,0.80)', // heading text color
                             '@text-color': 'rgba(0, 0, 0, 0.80)', // major text color
-                            '@text-color-secondary': 'rgba(42, 148, 244, 0.85)' // secondary text color
+                            '@text-color-secondary': 'rgb(121,121,121,0.8)' // secondary text color
                         },
                         javascriptEnabled: true,
                     },
