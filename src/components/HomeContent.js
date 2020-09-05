@@ -10,6 +10,7 @@ import salud from "../images/salud.png";
 import logo from "../images/logo-saturated.png";
 import epn from "../images/logo_epn.svg";
 import AppRouter from "../routers/AppRouter";
+import Footer from "./GeneralFooter";
 
 const { Content} = Layout;
 
@@ -270,7 +271,6 @@ const HomeContent = () =>{
                     </div>
 
                 </div>
-                <AppRouter />
             </Content>
 
     );

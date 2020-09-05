@@ -9,16 +9,12 @@ const HomeHeader = ()=> {
 
     const [web, setWeb] = useState(false);
     const [ok, setOk] = useState(false);
-    const [cancel, setCancel] = useState(false);
 
     const showModal = () => {
         setWeb(true);
     }
-    const handleOk = () =>{
-        setOk(true)
-    }
     const handleCancel = () =>{
-        setCancel(true)
+        setWeb(false)
     }
     return (
          <Header>
@@ -34,8 +30,7 @@ const HomeHeader = ()=> {
                     <Modal
                         title="BIENVENIDOS"
                         visible={web}
-                        onOk={false}
-                        onCancel={false}
+                        onCancel={handleCancel}
                         footer={null}
                     >
                         <Form name="basic" initialValues={{remember: true}}>
