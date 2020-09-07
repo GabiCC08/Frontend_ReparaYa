@@ -1,6 +1,8 @@
 import {Button, Card, Checkbox, Col, Form, Input, Layout, Row,Modal} from "antd";
 import logo from "../images/logo.png";
 import React, {useState} from "react";
+import Routes from "../constants/routes";
+import {Link} from "react-router-dom";
 
 const {Header} = Layout;
 
@@ -20,7 +22,7 @@ const HomeHeader = ()=> {
          <Header>
             <Row justify='space-between' align="middle">
                 <Col>
-                    <img className="logo" width={140} src={logo} alt='REPARAYA'/>
+                    <Link to={Routes.HOME}><img className="logo" width={140} src={logo} alt='REPARAYA'/></Link>
                 </Col>
                 <Col>
                     <Button>UNIRSE AHORA</Button>

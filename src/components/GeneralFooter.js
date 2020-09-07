@@ -25,7 +25,6 @@ const GeneralFooter = () => {
             <Row justify='space-around' align="middle">
                 <Col><span>©Reparaya WorldWide 2020</span></Col>
                 <Col>
-                    <Link to={Routes.HOME}><Button type="link">Inicio</Button></Link>
                     <Link to={Routes.ABOUT}><Button type="link">Acerca de</Button></Link>
                     <Link to={Routes.PRIVACY}><Button type="link">Privacidad</Button></Link>
                     <Link to={Routes.CONTACT}><Button type="link">Contáctanos</Button></Link>
