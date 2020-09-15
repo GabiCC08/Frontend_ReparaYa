@@ -25,7 +25,7 @@ const HomeHeader = ()=> {
                     <Link to={Routes.HOME}><img className="logo" width={140} src={logo} alt='REPARAYA'/></Link>
                 </Col>
                 <Col>
-                    <Button>UNIRSE AHORA</Button>
+                    <Link to={Routes.REGISTER}><Button>UNIRSE AHORA</Button></Link>
                     <Button type="primary" onClick={showModal}>
                         INICIAR SESIÓN
                     </Button>
@@ -50,9 +50,7 @@ const HomeHeader = ()=> {
                             <Button type="primary" htmlType="submit">
                                     INGRESAR
                             </Button>
-                            <Button>
-                                    CREAR CUENTA
-                            </Button>
+                            <Link to={Routes.REGISTER}><Button type="default">CREAR CUENTA</Button></Link>
                         </Form>
                     </Modal>
                 </Col>

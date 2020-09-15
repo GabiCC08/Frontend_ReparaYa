@@ -6,6 +6,8 @@ import About from "../pages/About";
 import Privacy from "../pages/Privacy";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
+import Profile from "../pages/Profile";
+import Register from "../pages/Register";
 
 const AppRouter = () => {
     return (
@@ -24,6 +26,14 @@ const AppRouter = () => {
             </Route>
             <Route path={Routes.CONTACT} >
                 <Contact />
+                <GeneralFooter />
+            </Route>
+            <Route path={Routes.REGISTER} >
+                <Register />
+                <GeneralFooter />
+            </Route>
+            <Route path={Routes.PROFILE} >
+                <Profile />
                 <GeneralFooter />
             </Route>
             <Route component={Home}/>

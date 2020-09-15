@@ -23,16 +23,17 @@ const GeneralFooter = () => {
     return (
         <Footer onClick={(e) => setCurrentPage(e.key)} selectedKeys={[currentPage]}>
             <Row justify='space-around' align="middle">
-                <Col><span>©Reparaya WorldWide 2020</span></Col>
+                <Col><Link to={Routes.HOME}><span>©Reparaya WorldWide 2020</span></Link></Col>
                 <Col>
                     <Link to={Routes.ABOUT}><Button type="link">Acerca de</Button></Link>
                     <Link to={Routes.PRIVACY}><Button type="link">Privacidad</Button></Link>
                     <Link to={Routes.CONTACT}><Button type="link">Contáctanos</Button></Link>
+
                 </Col>
                 <Col>
-                    <a><WhatsAppOutlined/></a>
-                    <a><LinkedinOutlined/></a>
-                    <a><MailOutlined/></a>
+                    <a href='https://web.whatsapp.com/'><WhatsAppOutlined/></a>
+                    <a href='https://www.linkedin.com/'><LinkedinOutlined/></a>
+                    <a href='https://mail.google.com/'><MailOutlined/></a>
                 </Col>
             </Row>
         </Footer>

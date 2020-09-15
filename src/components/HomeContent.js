@@ -11,6 +11,9 @@ import logo from "../images/logo-saturated.png";
 import epn from "../images/logo_epn.svg";
 import AppRouter from "../routers/AppRouter";
 import Footer from "./GeneralFooter";
+import GeneralFooter from "./GeneralFooter";
+import {Link} from "react-router-dom";
+import Routes from "../constants/routes";
 
 const { Content} = Layout;
 
@@ -38,7 +41,7 @@ const HomeContent = () =>{
                                             </Col>
                                         </Row>
                                         <div id='btnReg'>
-                                            <Button type="primary">REGISTRATE</Button>
+                                            <Link to={Routes.REGISTER}><Button type="primary">REGISTRATE</Button></Link>
                                         </div>
 
                                     </Card>
@@ -269,7 +272,6 @@ const HomeContent = () =>{
                             </Row>
                         </Form>
                     </div>
-
                 </div>
             </Content>
 
