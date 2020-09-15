@@ -1,4 +1,4 @@
-import {Button, Card, Checkbox, Col, Form, Input, Layout, Row,Modal} from "antd";
+import {Button, Checkbox, Col, Form, Input, Layout, Row,Modal} from "antd";
 import logo from "../images/logo.png";
 import React, {useState} from "react";
 import Routes from "../constants/routes";
@@ -10,7 +10,6 @@ const {Header} = Layout;
 const HomeHeader = ()=> {
 
     const [web, setWeb] = useState(false);
-    const [ok, setOk] = useState(false);
 
     const showModal = () => {
         setWeb(true);

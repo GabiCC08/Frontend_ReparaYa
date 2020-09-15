@@ -67,11 +67,11 @@ const About = () => (
                     </p>
                     <Row justify="center">
                         <Col>
-                            <img className="us" src={developer1} />
+                            <img className="us" src={developer1}  alt=""/>
                             <Text type="secondary">Jonathan Alquinga<br/>jonathan.alquinga@epn.edu.ec</Text>
                         </Col>
                         <Col>
-                            <img className="us" src={developer2} />
+                            <img className="us" src={developer2}  alt=""/>
                             <Text type="secondary">Gabriela Cola<br/>gabriela.cola@epn.edu.ec</Text>
                         </Col>
                     </Row>

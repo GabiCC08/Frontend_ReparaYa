@@ -9,11 +9,14 @@ import lugar from "../images/lugar.png";
 import salud from "../images/salud.png";
 import logo from "../images/logo-saturated.png";
 import epn from "../images/logo_epn.svg";
+<<<<<<< HEAD
 import AppRouter from "../routers/AppRouter";
 import Footer from "./GeneralFooter";
 import GeneralFooter from "./GeneralFooter";
 import {Link} from "react-router-dom";
 import Routes from "../constants/routes";
+=======
+>>>>>>> 031b149e4ccc16083d80745e0056c58cc21a674f
 
 const { Content} = Layout;
 

@@ -18,7 +18,7 @@ const GeneralFooter = () => {
         setCurrentPage(urlParts[1] !== ''
             ? urlParts[1]
             : 'inicio');
-    }, []);
+    }, [location.pathname]);
 
     return (
         <Footer onClick={(e) => setCurrentPage(e.key)} selectedKeys={[currentPage]}>
@@ -31,9 +31,15 @@ const GeneralFooter = () => {
 
                 </Col>
                 <Col>
+<<<<<<< HEAD
                     <a href='https://web.whatsapp.com/'><WhatsAppOutlined/></a>
                     <a href='https://www.linkedin.com/'><LinkedinOutlined/></a>
                     <a href='https://mail.google.com/'><MailOutlined/></a>
+=======
+                    <a href="https://github.com/DDI-2020A/proyecto-semestre-reparaya"><WhatsAppOutlined/></a>
+                    <a href="https://github.com/DDI-2020A/proyecto-semestre-reparaya"><LinkedinOutlined/></a>
+                    <a href="https://github.com/DDI-2020A/proyecto-semestre-reparaya"><MailOutlined/></a>
+>>>>>>> 031b149e4ccc16083d80745e0056c58cc21a674f
                 </Col>
             </Row>
         </Footer>
