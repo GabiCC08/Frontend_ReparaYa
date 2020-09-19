@@ -1,29 +1,38 @@
 import React from "react";
-import {Col, Row, Typography} from 'antd';
-import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
-import GeneralFooter from "../components/GeneralFooter";
-import SimpleHeader from "../components/SimpleHeader";
-import developer2 from "../images/gabi.jpg";
-const { Text} = Typography;
+import {Layout, Row, Col, Descriptions, Image} from 'antd';
+import {} from '@ant-design/icons';
+import SearchHeader from "../components/SearchHeader";
+
 
 const Profile = () => {
-        return (
-            <>
-            <SimpleHeader/>
-            <Row>
-                <Col span={24}>
-                    <img className="portada" src='https://medioambienteynaturaleza.com/wp-content/uploads/2015/08/Fondos-de-pantalla-de-naturaleza-ac.jpg' />
-                </Col>
-            </Row>
+
+    return (
+        <>
+            <SearchHeader/>
+            <Layout>
                 <Row>
-                    <Col span={12}>
-                        <img className="us" src={developer2} />
-                        <Text type="secondary">Gabriela Cola<br/>gabriela.cola@epn.edu.ec</Text>
+                    <Col>
+                        <div>
+                            <Image src="" alt="USER"/>
+                        </div>
+                        <div>
+                            <Descriptions title="User Info">
+                                <Descriptions.Item label="UserName">Zhou Maomao</Descriptions.Item>
+                                <Descriptions.Item label="Telephone">1810000000</Descriptions.Item>
+                                <Descriptions.Item label="Live">Hangzhou, Zhejiang</Descriptions.Item>
+                                <Descriptions.Item label="Remark">empty</Descriptions.Item>
+                                <Descriptions.Item label="Address">
+                                    No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China
+                                </Descriptions.Item>
+                            </Descriptions>,
+                        </div>
                     </Col>
+                    <Col>
 
+                    </Col>
                 </Row>
-
-            </>
-        );
+            </Layout>
+        </>
+    );
 }
 export default Profile;

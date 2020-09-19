@@ -31,15 +31,9 @@ const GeneralFooter = () => {
 
                 </Col>
                 <Col>
-<<<<<<< HEAD
-                    <a href='https://web.whatsapp.com/'><WhatsAppOutlined/></a>
-                    <a href='https://www.linkedin.com/'><LinkedinOutlined/></a>
-                    <a href='https://mail.google.com/'><MailOutlined/></a>
-=======
-                    <a href="https://github.com/DDI-2020A/proyecto-semestre-reparaya"><WhatsAppOutlined/></a>
-                    <a href="https://github.com/DDI-2020A/proyecto-semestre-reparaya"><LinkedinOutlined/></a>
-                    <a href="https://github.com/DDI-2020A/proyecto-semestre-reparaya"><MailOutlined/></a>
->>>>>>> 031b149e4ccc16083d80745e0056c58cc21a674f
+                    <a href='https://web.whatsapp.com/' target="_blank" rel="noopener noreferrer"><WhatsAppOutlined/></a>
+                    <a href='https://www.linkedin.com/' target="_blank" rel="noopener noreferrer"><LinkedinOutlined/></a>
+                    <a href='https://mail.google.com/' target="_blank" rel="noopener noreferrer"><MailOutlined/></a>
                 </Col>
             </Row>
         </Footer>

@@ -10,7 +10,7 @@ const {Header} = Layout;
 const HomeHeader = ()=> {
 
     const [web, setWeb] = useState(false);
-
+  
     const showModal = () => {
         setWeb(true);
     }
@@ -46,14 +46,11 @@ const HomeHeader = ()=> {
                             <Form.Item name="remember" valuePropName="checked">
                                 <Checkbox>Recordarme</Checkbox>
                             </Form.Item>
-                            <Button type="primary" htmlType="submit">
-                                    INGRESAR
-                            </Button>
+                            <Link to={Routes.PROFILE}>  <Button type="primary" htmlType="submit">INGRESAR</Button></Link>
                             <Link to={Routes.REGISTER}><Button type="default">CREAR CUENTA</Button></Link>
                         </Form>
                     </Modal>
                 </Col>
-
             </Row>
 
         </Header>

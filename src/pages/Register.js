@@ -1,12 +1,11 @@
 import React from 'react';
 import SimpleHeader from "../components/SimpleHeader";
-import {Button, Col, Form, Input, Layout, Row} from "antd";
+import {Button, Form, Input} from "antd";
 import Routes from "../constants/routes";
 import {Link, useLocation} from "react-router-dom";
 import '../styles/Register.less';
 import { LockOutlined, UserOutlined, MailOutlined, EditOutlined, FileTextOutlined } from '@ant-design/icons';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons/lib';
-const {Content} = Layout;
 
 
 

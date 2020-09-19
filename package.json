@@ -8,13 +8,9 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "antd": "^4.6.3",
+    "antd": "^4.6.4",
     "craco-less": "^1.17.0",
-<<<<<<< HEAD
     "firebase": "^7.20.0",
-=======
-    "firebase": "^7.19.1",
->>>>>>> 031b149e4ccc16083d80745e0056c58cc21a674f
     "firebase-tools": "^8.10.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

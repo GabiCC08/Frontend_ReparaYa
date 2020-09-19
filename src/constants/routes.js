@@ -4,8 +4,8 @@ const publicRoutes = {
   ABOUT: '/acerca_de',
   PRIVACY: '/privacidad',
   CONTACT: '/contacto',
-  REGISTER: '/registro-de-un-nuevo-usuario',
-  PROFILE: '/Inicio-de-sesion',
+  REGISTER: '/registro',
+  PROFILE: '/perfil',
 };
 
 const privateRoutes = {
