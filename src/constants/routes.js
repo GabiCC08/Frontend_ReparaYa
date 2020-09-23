@@ -1,6 +1,7 @@
 
 const publicRoutes = {
   HOME: '/',
+  LOGIN: '/login',
   ABOUT: '/acerca_de',
   PRIVACY: '/privacidad',
   CONTACT: '/contacto',

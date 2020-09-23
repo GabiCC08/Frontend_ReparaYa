@@ -14,12 +14,15 @@ const config = {
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
     measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
+
 app.initializeApp(config);
 
-export const db = app.database();
+const auth =app.auth();
+const db = app.database();
 
 const FIREBASE = {
-    db
+    db,
+    auth
 }
 
 export default FIREBASE;

@@ -40,12 +40,16 @@ const SearchHeader = () => {
                 <Col/>
                 <Col/>
                 <Col>
-                    <Dropdown overlay={menu}>
-                        <Button>Buscar<SearchOutlined/></Button>
-                    </Dropdown>
+                    <div>
+                        <Dropdown overlay={menu}>
+                            <Button>Buscar<SearchOutlined/></Button>
+                        </Dropdown>
+                    </div>
                 </Col>
                 <Col>
-                    <Link to={Routes.HOME}><Button type="link"><IconFont onClick={handleExitClick} type="icon-tuichu"/></Button></Link>
+                    <div>
+                        <Link to={Routes.HOME}><Button type="link"><IconFont onClick={handleExitClick} type="icon-tuichu"/></Button></Link>
+                    </div>
                 </Col>
             </Row>
         </Header>

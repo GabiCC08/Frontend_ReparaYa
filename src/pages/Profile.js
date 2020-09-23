@@ -2,6 +2,7 @@ import React from "react";
 import {Layout, Row, Col, Descriptions, Image} from 'antd';
 import {} from '@ant-design/icons';
 import SearchHeader from "../components/SearchHeader";
+import ejemplo from '../images/gabi.jpg'
 
 
 const Profile = () => {
@@ -13,7 +14,7 @@ const Profile = () => {
                 <Row>
                     <Col>
                         <div>
-                            <Image src="" alt="USER"/>
+                            <Image src={ejemplo} alt="USER" width={140}/>
                         </div>
                         <div>
                             <Descriptions title="User Info">

@@ -1,139 +1,158 @@
 import React from 'react';
 import SimpleHeader from "../components/SimpleHeader";
-import {Button, Form, Input, message,Switch} from "antd";
-import Routes from "../constants/routes";
-import {Link} from "react-router-dom";
+import {Form, Input, Select, Button, message, Row, Col, Divider} from "antd";
 import '../styles/Register.less';
-import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons/lib';
+import {EyeInvisibleOutlined, EyeTwoTone} from '@ant-design/icons/lib';
 import FIREBASE from "../firebase";
 
 
 const Register = () => {
 
-    const handleSubmit= async (values)=>{
-        console.log('datos de la base de Datos')
-        await FIREBASE.db.ref('user').push(values);
-        message.success('Los datos se Guardaron Correctamente');
+    // const normFile = e => {
+    //     console.log('Upload event:', e);
+    //     if (Array.isArray(e)) {
+    //         return e;
+    //     }
+    //     return e && e.fileList;
+    // };
+
+    const handleSubmit = async (values) => {
+        console.log('form', values);
+
+        // const image = values.foto[0].originFileObj;
+        // const uploadSnapshot = await FIREBASE.storage.ref('animals/' + values.foto[0].name + '_ ' + Date.now()).put(image);
+        // const imageURL = await uploadSnapshot.ref.getDownloadURL();
+        // console.log(imageURL);
+
+        await FIREBASE.db.ref('user').push({
+            ...values,
+            // foto: imageURL
+        });
+        message.success('Los datos se ingresaron correctamente.');
     }
-    return(
-        <div>
+
+    return (
+        <>
             <SimpleHeader/>
             <div className='section' id='imgRegister'>
-                <h1 id='hFrm' style={{textAlign: 'Center',fontsize:'10px'}}>REGISTRATE EN REPARA YA </h1>
-                <div id='register'>
-                    <Form name='register-form'
-                          className='register-form'
-                          initialValues={ {
-                              email: '',
-                              password: ''
-                          } }
+                <h1 id='hFrm'>FORMULARIO DE REGISTRO</h1>
+                <Row>
+                    <Col span={14} style={{margin: 'auto'}}>
 
-                    >
-                        <Form.Item name={['user', 'name']} label="Nombres Completos"
-                                   rules={[{required: true, message: 'Por favor, ingresa tus nombres completo.'}]} hasFeedback>
-                            <Input placeholder='Nombres' />
+                        <Divider orientation="center">Información de autenticación</Divider>
+                        <Form.Item
+                            label='Correo electrónico'
+                            name="email"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Por favor, ingresa tu email.'
+                                },
+                                {
+                                    type: 'email',
+                                    message: 'Por favor, ingresa un correo valido'
+                                }
+                            ]}>
+                            <Input placeholder="Correo Electrónico"/>
                         </Form.Item>
 
-                        <Form.Item name={['user', 'lastname']} label="Apellidos Completos"
-                                   rules={[{required: true, message: 'Por favor, tus apellidos completos'}]} hasFeedback>
-                            <Input placeholder='Apellidos' />
+                        <Form.Item
+                            label='Contraseña'
+                            name="password"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Por favor, ingresa una contraseña.'
+                                }
+                            ]}>
+                            <Input.Password placeholder="Contraseña"/>
+                        </Form.Item>
+                        <Form.Item
+                            label='Confirmar contraseña'
+                            name="password2"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Por favor, ingresa la contraseña.'
+                                }
+                            ]}>
+                            <Input.Password placeholder="Contraseña"/>
                         </Form.Item>
 
-                        <Form.Item name={['user', 'email']} label="Email"
-                                   rules={ [
-                                       {
-                                           required: true,
-                                           message: 'Ingresa tu nombre de usuario'
-                                       },
-                                       {
-                                           type: 'email',
-                                           message: 'Ingresa un correo válido'
-                                       }
-                                   ] }
-                                   hasFeedback
+                        <Button>VERIFICAR</Button>
+
+                        <Divider orientation="center">Información personal</Divider>
+                        <Form name='new-profile'
+                              onFinish={handleSubmit}
                         >
-                            <Input placeholder='Email' />
-                        </Form.Item>
-
-                        <Form.Item name={['user', 'password']} label="Contraseña"
-                                   rules={ [
-                                       {
+                            <Form.Item name={['name']} label="Nombre Completo"
+                                       rules={[{
                                            required: true,
-                                           message: 'Ingresa tu clave'
-                                       }
-                                   ] }
-                                   hasFeedback
-                        >
-                            <Input.Password
-                                iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-                                placeholder='Clave' />
-                        </Form.Item>
-
-                        <Form.Item name={['user', 'password-confirmation']} label="Contraseña"
-                                   dependencies={ [ 'password' ] }
-                                   hasFeedback
-                                   rules={ [
-                                       {
+                                           message: 'Por favor, ingresa tu nombre completo.'
+                                       }]}>
+                                <Input/>
+                            </Form.Item>
+                            <Form.Item name={['lastname']} label="Apellidos"
+                                       rules={[{
                                            required: true,
-                                           message: 'Confirma tu clave',
-                                       },
-                                       ( { getFieldValue } ) => ({
-                                           validator( rule, value ) {
-                                               if( !value || getFieldValue( 'password' ) === value ) {
-                                                   return Promise.resolve();
-                                               }
-                                               return Promise.reject( 'Las claves no coinciden' );
-                                           },
-                                       }),
-                                   ] }
-                        >
-                            <Input.Password
-                                iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-                                placeholder='Vuelve a escribir la Clave' />
-                        </Form.Item>
+                                           message: 'Por favor, ingresa sus apellidos completo.'
+                                       }]}>
+                                <Input/>
+                            </Form.Item>
 
-                        <Form.Item name={['user', 'visible']}  label="Visible" rules={ [
-                            {
-                                required: true,
-                            }
-                        ] }>
-                            <Switch />
-                        </Form.Item>
+                            <Form.Item
+                                label='Ciudad'
+                                name='city'
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Escoga el area de trabajo'
+                                    }
+                                ]}
+                            >
+                                <Select>
+                                    <Select.Option value="quito">Quito</Select.Option>
+                                    <Select.Option value="guayaquil">Guayaquil</Select.Option>
+                                    <Select.Option value="cuenca">Cuenca</Select.Option>
+                                    <Select.Option value="ambato">Ambayo</Select.Option>
+                                    <Select.Option value="imbabura">Imbabura</Select.Option>
+                                    <Select.Option value="machala">Machala</Select.Option>
+                                </Select>
+                            </Form.Item>
 
-                        <Form.Item name={['user', 'city']} label="Ciudad"
-                                   rules={ [
-                                       {
-                                           required: true,
-                                           message: 'Ingresas tu ciudad'
-                                       }
-                                   ] }
-                                   hasFeedback
-                        >
-                            <Input  placeholder='Ciudad' />
-                        </Form.Item>
-                        <Form.Item name={['user', 'job-type']} label="Trabajo"
-                                   rules={ [
-                                       {
-                                           required: true,
-                                           message: 'Ingresas tu ciudad'
-                                       }
-                                   ] }
-                                   hasFeedback
-                        >
-                            <Input  placeholder='Ciudad' />
-                        </Form.Item>
+                            <Form.Item
+                                name="phone"
+                                label="Telefono"
+                                rules={[{required: true, message: 'Por favor, ingrese su número telefónico.'}]}
+                            >
+                                <Input style={{width: '100%'}}/>
+                            </Form.Item>
+                            <Divider orientation="center">Información laboral</Divider>
+                            <Form.Item
+                                label='Area Laboral'
+                                name='area'
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Escoga el area de trabajo'
+                                    }
+                                ]}
+                            >
+                                <Select>
+                                    <Select.Option value="mecanico">Mecanica</Select.Option>
+                                    <Select.Option value="electricista">Electricidad</Select.Option>
+                                    <Select.Option value="carpinteria">Carpinteria</Select.Option>
+                                    <Select.Option value="plomeria">Plomeria</Select.Option>
+                                    <Select.Option value="electrodocmesticos">Electrodomesticos</Select.Option>
+                                </Select>
+                            </Form.Item>
+                                <Button type="primary" htmlType="submit">REGISTRAR</Button>
+                        </Form>
 
-                        <Form.Item>
-                            <Link to={Routes.PROFILE}><Button type='primary' htmlType='submit' className='login-form-button'>
-                                Registrarme
-                            </Button></Link>
-                            <Link to={Routes.HOME}><Button type="default">Ya tengo una Cuenta</Button></Link>
-                        </Form.Item>
-                    </Form>
-
-                </div>
+                    </Col>
+                </Row>
             </div>
-        </div>
+        </>
     )
 };
 
