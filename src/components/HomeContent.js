@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Card, Carousel, Col, Form, Input, Layout, Row} from "antd";
+import {Button, Card, Carousel, Col, Form, Input, Layout, message, Row} from "antd";
 import imgInicio from "../images/imgInicio.svg";
 import feliz from "../images/feliz.png";
 import busca from "../images/busca.png";
@@ -11,11 +11,19 @@ import logo from "../images/logo-saturated.png";
 import epn from "../images/logo_epn.svg";
 import help from "../images/settings.png";
 import study from "../images/busy.png";
+import FIREBASE from "../firebase";
 
 const {Content} = Layout;
 
 const HomeContent = () => {
+
+    const handleSubmit= async (values)=>{
+        console.log('datos de la base de Datos')
+        await FIREBASE.db.ref('mailbox').push(values);
+        message.success('Los datos se guardaron correctamente');
+    }
     return (
+        <>
         <Content>
             <div className="site-layout-content">
 
@@ -232,26 +240,41 @@ const HomeContent = () => {
 
                 <div className='section' id='contac'>
                     <h1 id='hFrm' style={{textAlign: 'Center'}}>CONTÁCTANOS</h1>
-                    <Form>
+                    <Form onFinish={handleSubmit} >
                         <Row>
                             <Col span={12} style={{margin: 'auto'}}>
-                                <Form.Item name={['user', 'Name']} label="Nombre Completo"
-                                           rules={[{required: true}]}>
+                                <Form.Item name={['name']} label="Nombre Completo"
+                                           rules={[{required: true, message: 'Por favor, ingresa tu nombre completo.'}]}>
                                     <Input/>
                                 </Form.Item>
-                                <Form.Item name={['user', 'Email']} label="Correo Electrónico"
-                                           rules={[{type: 'email', required: true}]}>
+                                <Form.Item name={['email']} label="Correo Electrónico"
+                                           rules={[{
+                                               type: 'email',
+                                               required: true,
+                                               message: 'Por favor, ingresa tu correo electrónico.'
+                                           }]}>
                                     <Input/>
                                 </Form.Item>
-                                <Form.Item name={['user', 'Number']} label="Número de teléfono"
-                                           rules={[{type: 'number', required: true}]}>
-                                    <Input/>
+
+                                <Form.Item
+                                    name="phone"
+                                    label="Telefono"
+                                    rules={[{ required: true, message: 'Por favor, ingrese su número telefónico.' }]}
+                                >
+                                    <Input  style={{ width: '100%' }} />
                                 </Form.Item>
-                                <Form.Item name={['user', 'city']} label="Ciudad"
-                                           rules={[{type: 'city', required: true}]}>
-                                    <Input/>
+
+                                <Form.Item name={['city']} label="Ciudad"
+                                           rules={ [
+                                               {
+                                                   required: true
+                                               }
+                                           ] }
+                                >
+                                    <Input />
                                 </Form.Item>
-                                <Form.Item name={['user', 'Asunto']} label="Asunto" rules={[{required: true}]}>
+                                <Form.Item name={['asunto']} label="Asunto"
+                                           rules={[{required: true, message: 'Por favor, llena el campo de texto.'}]}>
                                     <Input.TextArea/>
                                 </Form.Item>
                                 <Form.Item wrapperCol={{offset: 8}}>
@@ -266,7 +289,7 @@ const HomeContent = () => {
 
             </div>
         </Content>
-
+    </>
     );
 
 };
