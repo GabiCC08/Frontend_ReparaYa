@@ -15,7 +15,7 @@ const Login = () => {
             await FIREBASE.auth.signInWithEmailAndPassword(email, password)
             history.push(Routes.PROFILE)
         } catch (error) {
-            let errorCode = error.code;
+            // let errorCode = error.code;
             let errorMessage = error.message;
             message.error(errorMessage);
         }

@@ -1,34 +1,44 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SimpleHeader from "../components/SimpleHeader";
 import {Form, Input, Select, Button, message, Row, Col, Divider} from "antd";
 import '../styles/Register.less';
-import {EyeInvisibleOutlined, EyeTwoTone} from '@ant-design/icons/lib';
 import FIREBASE from "../firebase";
 
 
 const Register = () => {
 
-    // const normFile = e => {
-    //     console.log('Upload event:', e);
-    //     if (Array.isArray(e)) {
-    //         return e;
-    //     }
-    //     return e && e.fileList;
-    // };
+    const [id, setId] = useState("");
 
-    const handleSubmit = async (values) => {
-        console.log('form', values);
 
-        // const image = values.foto[0].originFileObj;
-        // const uploadSnapshot = await FIREBASE.storage.ref('animals/' + values.foto[0].name + '_ ' + Date.now()).put(image);
-        // const imageURL = await uploadSnapshot.ref.getDownloadURL();
-        // console.log(imageURL);
+    const handleCreate = async ({email, password}) => {
+        try {
+            await FIREBASE.auth.createUserWithEmailAndPassword(email, password)
+            message.success("Información validada")
+            getId();
+        } catch (error) {
+            // let errorCode = error.code;
+            let errorMessage = error.message;
+            message.error(errorMessage);
+        }
+    }
 
-        await FIREBASE.db.ref('user').push({
+    const getId= async () => {
+        const user = await FIREBASE.auth.currentUser;
+        if (user != null) {
+            const aux= (user.uid);
+            setId(aux);
+        }
+    }
+
+    const handleSubmit = async ( values) => {
+        getId();
+        console.log("valid_ID:", id)
+        console.log('formData:', values);
+
+        await FIREBASE.db.ref(`user/${id}`).set({
             ...values,
-            // foto: imageURL
         });
-        message.success('Los datos se ingresaron correctamente.');
+        message.success('Registro exitoso');
     }
 
     return (
@@ -40,46 +50,65 @@ const Register = () => {
                     <Col span={14} style={{margin: 'auto'}}>
 
                         <Divider orientation="center">Información de autenticación</Divider>
-                        <Form.Item
-                            label='Correo electrónico'
-                            name="email"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Por favor, ingresa tu email.'
-                                },
-                                {
-                                    type: 'email',
-                                    message: 'Por favor, ingresa un correo valido'
-                                }
-                            ]}>
-                            <Input placeholder="Correo Electrónico"/>
-                        </Form.Item>
+                        <Form
+                            name="register"
+                            onFinish={handleCreate}
+                        >
+                            <Form.Item
+                                label='Correo electrónico'
+                                name="email"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Por favor, ingresa tu email.'
+                                    },
+                                    {
+                                        type: 'email',
+                                        message: 'Por favor, ingresa un correo valido'
+                                    }
+                                ]}>
+                                <Input placeholder="Correo Electrónico"/>
+                            </Form.Item>
 
-                        <Form.Item
-                            label='Contraseña'
-                            name="password"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Por favor, ingresa una contraseña.'
-                                }
-                            ]}>
-                            <Input.Password placeholder="Contraseña"/>
-                        </Form.Item>
-                        <Form.Item
-                            label='Confirmar contraseña'
-                            name="password2"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Por favor, ingresa la contraseña.'
-                                }
-                            ]}>
-                            <Input.Password placeholder="Contraseña"/>
-                        </Form.Item>
+                            <Form.Item
+                                name="password"
+                                label="Contraseña"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Por favor, ingresa una contraseña',
+                                    },
+                                ]}
+                                hasFeedback
+                            >
+                                <Input.Password/>
+                            </Form.Item>
 
-                        <Button>VERIFICAR</Button>
+                            <Form.Item
+                                name="confirm"
+                                label="Confirmación de contraseña"
+                                dependencies={['password']}
+                                hasFeedback
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Por favor, confirma tu contraseña',
+                                    },
+                                    ({getFieldValue}) => ({
+                                        validator(rule, value) {
+                                            if (!value || getFieldValue('password') === value) {
+                                                return Promise.resolve();
+                                            }
+                                            return Promise.reject('Las contraseñas no coinciden');
+                                        },
+                                    }),
+                                ]}
+                            >
+                                <Input.Password/>
+                            </Form.Item>
+
+                            <Button htmlType="submit">VERIFICAR</Button>
+                        </Form>
 
                         <Divider orientation="center">Información personal</Divider>
                         <Form name='new-profile'
@@ -146,7 +175,7 @@ const Register = () => {
                                     <Select.Option value="electrodocmesticos">Electrodomesticos</Select.Option>
                                 </Select>
                             </Form.Item>
-                                <Button type="primary" htmlType="submit">REGISTRAR</Button>
+                            <Button type="primary" htmlType="submit">REGISTRAR</Button>
                         </Form>
 
                     </Col>
