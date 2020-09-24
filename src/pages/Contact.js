@@ -18,7 +18,7 @@ const Contact = () => {
         <div>
             <SimpleHeader/>
             <div className='section' id='Contact-Form'>
-                <h1 id='hFrm' style={{textAlign: 'Center'}}>CONTÁCTANOS</h1>
+                <h1 className='hFrm' style={{textAlign: 'Center'}}>CONTÁCTANOS</h1>
                 <div id='content-parra'>
                     <p style={{margin: '0px'}}>
                         Bienvenido a nuestro sitio web. Estamos contentos de atender tu requerimiento.

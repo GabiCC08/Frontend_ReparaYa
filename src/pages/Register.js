@@ -45,7 +45,7 @@ const Register = () => {
         <>
             <SimpleHeader/>
             <div className='section' id='imgRegister'>
-                <h1 id='hFrm'>FORMULARIO DE REGISTRO</h1>
+                <h1 className='hFrm'>FORMULARIO DE REGISTRO</h1>
                 <Row>
                     <Col span={14} style={{margin: 'auto'}}>
 
@@ -67,7 +67,7 @@ const Register = () => {
                                         message: 'Por favor, ingresa un correo valido'
                                     }
                                 ]}>
-                                <Input placeholder="Correo Electrónico"/>
+                                <Input/>
                             </Form.Item>
 
                             <Form.Item
@@ -81,7 +81,7 @@ const Register = () => {
                                 ]}
                                 hasFeedback
                             >
-                                <Input.Password/>
+                                <Input.Password className="psw"/>
                             </Form.Item>
 
                             <Form.Item
@@ -104,7 +104,7 @@ const Register = () => {
                                     }),
                                 ]}
                             >
-                                <Input.Password/>
+                                <Input.Password className="psw"/>
                             </Form.Item>
 
                             <Button htmlType="submit">VERIFICAR</Button>
@@ -139,13 +139,18 @@ const Register = () => {
                                     }
                                 ]}
                             >
-                                <Select>
-                                    <Select.Option value="quito">Quito</Select.Option>
-                                    <Select.Option value="guayaquil">Guayaquil</Select.Option>
-                                    <Select.Option value="cuenca">Cuenca</Select.Option>
-                                    <Select.Option value="ambato">Ambayo</Select.Option>
-                                    <Select.Option value="imbabura">Imbabura</Select.Option>
-                                    <Select.Option value="machala">Machala</Select.Option>
+                                <Select className="opcSelect">
+                                    <Select.Option value="Ambato">Ambato</Select.Option>
+                                    <Select.Option value="Cuenca">Cuenca</Select.Option>
+                                    <Select.Option value="Duran">Duran</Select.Option>
+                                    <Select.Option value="Esmeraldas">Esmeraldas</Select.Option>
+                                    <Select.Option value="Guayaquil">Guayaquil</Select.Option>
+                                    <Select.Option value="Loja">Loja</Select.Option>
+                                    <Select.Option value="Machala">Machala</Select.Option>
+                                    <Select.Option value="Manta">Manta</Select.Option>
+                                    <Select.Option value="Portoviejo">Portoviejo</Select.Option>
+                                    <Select.Option value="Quito">Quito</Select.Option>
+                                    <Select.Option value="Santo Domingo">Santo Domingo</Select.Option>
                                 </Select>
                             </Form.Item>
 
@@ -167,7 +172,7 @@ const Register = () => {
                                     }
                                 ]}
                             >
-                                <Select>
+                                <Select className="opcSelect">
                                     <Select.Option value="mecanico">Mecanica</Select.Option>
                                     <Select.Option value="electricista">Electricidad</Select.Option>
                                     <Select.Option value="carpinteria">Carpinteria</Select.Option>
