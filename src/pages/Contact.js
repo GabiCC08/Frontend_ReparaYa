@@ -61,7 +61,7 @@ const Contact = () => {
                             >
                                 <Input />
                             </Form.Item>
-                            <Form.Item name={['asunto']} label="Asunto"
+                            <Form.Item name={['affair']} label="Asunto"
                                        rules={[{required: true, message: 'Por favor, llena el campo de texto.'}]}>
                                 <Input.TextArea/>
                             </Form.Item>
