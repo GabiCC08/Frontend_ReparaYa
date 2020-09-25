@@ -12,6 +12,8 @@ import epn from "../images/logo_epn.svg";
 import help from "../images/settings.png";
 import study from "../images/reading-list.png";
 import FIREBASE from "../firebase";
+import {Link} from "react-router-dom";
+import Routes from "../constants/routes";
 
 const {Content} = Layout;
 
@@ -50,7 +52,7 @@ const HomeContent = () => {
                                         </Col>
                                     </Row>
                                     <Row justify="center">
-                                        <Button type="primary">REGISTRATE</Button>
+                                        <Link to={Routes.REGISTER}><Button type="primary">REGISTRATE</Button></Link>
                                     </Row>
 
                                 </Card>

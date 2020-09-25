@@ -54,7 +54,7 @@ const Profile = () => {
                 </Row>
                 <Row gutter={[8, 8]}>
                     <Col span={8}>
-                        <h2>Gabriela Cola</h2>
+                        <h2>{user.name} {user.lastname}</h2>
                         <Text strong>{user.area}</Text><br/>
                         <Text type="secondary">{user.city}</Text><br/><br/>
                         <h3>Informacion de contacto</h3>
