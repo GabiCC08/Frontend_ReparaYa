@@ -235,23 +235,38 @@ const HomeContent = () => {
                     <Form>
                         <Row>
                             <Col span={12} style={{margin: 'auto'}}>
-                                <Form.Item name={['user', 'Name']} label="Nombre Completo"
-                                           rules={[{required: true}]}>
+                                <Form.Item name={['name']} label="Nombre Completo"
+                                           rules={[{required: true, message: 'Por favor, ingresa tu nombre completo.'}]}>
                                     <Input/>
                                 </Form.Item>
-                                <Form.Item name={['user', 'Email']} label="Correo Electrónico"
-                                           rules={[{type: 'email', required: true}]}>
+                                <Form.Item name={['email']} label="Correo Electrónico"
+                                           rules={[{
+                                               type: 'email',
+                                               required: true,
+                                               message: 'Por favor, ingresa tu correo electrónico.'
+                                           }]}>
                                     <Input/>
                                 </Form.Item>
-                                <Form.Item name={['user', 'Number']} label="Número de teléfono"
-                                           rules={[{type: 'number', required: true}]}>
-                                    <Input/>
+
+                                <Form.Item
+                                    name="phone"
+                                    label="Telefono"
+                                    rules={[{ required: true, message: 'Por favor, ingrese su número telefónico.' }]}
+                                >
+                                    <Input  style={{ width: '100%' }} />
                                 </Form.Item>
-                                <Form.Item name={['user', 'city']} label="Ciudad"
-                                           rules={[{type: 'city', required: true}]}>
-                                    <Input/>
+
+                                <Form.Item name={['city']} label="Ciudad"
+                                           rules={ [
+                                               {
+                                                   required: true
+                                               }
+                                           ] }
+                                >
+                                    <Input />
                                 </Form.Item>
-                                <Form.Item name={['user', 'Asunto']} label="Asunto" rules={[{required: true}]}>
+                                <Form.Item name={['asunto']} label="Asunto"
+                                           rules={[{required: true, message: 'Por favor, llena el campo de texto.'}]}>
                                     <Input.TextArea/>
                                 </Form.Item>
                                 <Form.Item wrapperCol={{offset: 8}}>
