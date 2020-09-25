@@ -1,9 +1,10 @@
 import React from 'react';
 import SimpleHeader from "../components/SimpleHeader";
-import {Button, Col, Form, Input, message, Row} from "antd";
+import {Button, Col, Form, Image, Input, message, Row} from "antd";
 import telefono from "../images/telefono.png";
 import ubicacion from "../images/ubicacion.png";
 import mensajes from "../images/mensajes.png";
+import mapa from '../images/mapa.png'
 import FIREBASE from "../firebase";
 
 const Contact = () => {
@@ -17,7 +18,7 @@ const Contact = () => {
     return (
         <div>
             <SimpleHeader/>
-            <div className='section' id='Contact-Form' style={{background: '#3291a7'}}>
+            <div className='section' id='Contact-Form'>
                 <h1 className='hFrm' style={{textAlign: 'Center'}}>CONTÁCTANOS</h1>
                 <div id='content-parra'>
                     <p style={{margin: '0px'}}>
@@ -80,6 +81,9 @@ const Contact = () => {
                                                       alt='icon2'/> repaya20coopor@gmail.com</Col>
                                     <Col spa={4}><img className='icons' style={{width: '30px'}} src={ubicacion}
                                                       alt='icon3'/> Av. Ladrón de Guevara 253, Quito 170517
+                                    </Col>
+                                    <Col>
+                                        <Image src={mapa}></Image>
                                     </Col>
                                 </Row>
                             </div>
