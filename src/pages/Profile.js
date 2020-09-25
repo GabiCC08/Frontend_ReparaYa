@@ -5,6 +5,8 @@ import SearchHeader from "../components/SearchHeader";
 import ejemplo from '../images/profile.png'
 import FIREBASE from "../firebase";
 import '../styles/Profile.less'
+import Routes from "../constants/routes";
+import {Link} from "react-router-dom";
 const { Text} = Typography;
 
 const Profile = () => {
@@ -50,7 +52,7 @@ const Profile = () => {
             <Layout id="profileContent">
                 <Row gutter={[8, 8]}>
                     <Col span={8}><Image src={ejemplo} alt="USER" width={140}/></Col>
-                    <Col span={16}><Button type="primary" >PUBLICAR</Button></Col>
+                    <Col span={16}> <Link to={Routes.PUBLICATION}><Button type="primary" >PUBLICAR</Button></Link></Col>
                 </Row>
                 <Row gutter={[8, 8]}>
                     <Col span={8}>
