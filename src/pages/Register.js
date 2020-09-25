@@ -3,12 +3,14 @@ import SimpleHeader from "../components/SimpleHeader";
 import {Form, Input, Select, Button, message, Row, Col, Divider} from "antd";
 import '../styles/Register.less';
 import FIREBASE from "../firebase";
+import {useHistory} from 'react-router-dom'
+import Routes from '../constants/routes'
 
 
 const Register = () => {
 
     const [id, setId] = useState("");
-
+    const history = useHistory();
 
     const handleCreate = async ({email, password}) => {
         try {
@@ -39,6 +41,7 @@ const Register = () => {
             ...values,
         });
         message.success('Registro exitoso');
+        history.push(Routes.PROFILE)
     }
 
     return (
@@ -173,11 +176,17 @@ const Register = () => {
                                 ]}
                             >
                                 <Select className="opcSelect">
-                                    <Select.Option value="mecanico">Mecanica</Select.Option>
-                                    <Select.Option value="electricista">Electricidad</Select.Option>
-                                    <Select.Option value="carpinteria">Carpinteria</Select.Option>
-                                    <Select.Option value="plomeria">Plomeria</Select.Option>
-                                    <Select.Option value="electrodocmesticos">Electrodomesticos</Select.Option>
+                                    <Select.Option value="Albañileria">Albañilería</Select.Option>
+                                    <Select.Option value="Carpinteria">Carpintería</Select.Option>
+                                    <Select.Option value="Cerrajeria">Cerrajería</Select.Option>
+                                    <Select.Option value="Electricidad">Electricidad</Select.Option>
+                                    <Select.Option value="Electrodomésticos">Electrodomésticos</Select.Option>
+                                    <Select.Option value="Electronica">Electrónica</Select.Option>
+                                    <Select.Option value="Fontaneria">Fontanería</Select.Option>
+                                    <Select.Option value="Mecánica">Mecánica</Select.Option>
+                                    <Select.Option value="Pintura">Pintura</Select.Option>
+                                    <Select.Option value="Radiotecnia">Radiotécnia</Select.Option>
+                                    <Select.Option value="Soldadura">Soldadura</Select.Option>
                                 </Select>
                             </Form.Item>
                             <Button type="primary" htmlType="submit">REGISTRAR</Button>

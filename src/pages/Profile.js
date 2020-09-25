@@ -9,17 +9,31 @@ import FIREBASE from "../firebase";
 const Profile = () => {
 
     const [user, setUser] = useState("");
+    const [id, setId] = useState("");
+
 
     useEffect(() => {
         const getUser = async () => {
-            await FIREBASE.db.ref(`user/xoN2MKVkthVi9OYGlzrQTPBQMXD3`).once('value').then(function (snapshot) {
-                setUser(snapshot.val()) ;
-                console.log(user)
+            await FIREBASE.db.ref(`user/${id}`).once('value').then(function (snapshot) {
+                console.log("Datos del snapshot",snapshot.val());
+                setUser(snapshot.val());
             })
         };
         getUser();
+    }, [id]);
 
-    }, []);
+
+    useEffect(()=>{
+        const getId = async () => {
+            const user = await FIREBASE.auth.currentUser;
+            if (user != null) {
+                const aux= (user.uid);
+                console.log("Id(current):",aux);
+                setId(aux);
+            }
+        }
+        getId();
+    },[]);
 
     return (
         <>
@@ -40,10 +54,6 @@ const Profile = () => {
                         <Descriptions.Item label="Nombre">{user.name}</Descriptions.Item>
                         <Descriptions.Item label="Apellido">{user.lastname}</Descriptions.Item>
                         <Descriptions.Item label="Ciudad">{user.city}</Descriptions.Item>
-                        <Descriptions.Item label="Remark">empty</Descriptions.Item>
-                        <Descriptions.Item label="Address">
-                            No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China
-                        </Descriptions.Item>
                     </Descriptions>
                 </Row>
             </Layout>
