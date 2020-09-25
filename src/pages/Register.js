@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import SimpleHeader from "../components/SimpleHeader";
-import {Form, Input, Select, Button, message, Row, Col, Divider} from "antd";
+import {Form, Input, Select, Button, message, Row, Col, Divider,Tooltip} from "antd";
 import '../styles/Register.less';
 import FIREBASE from "../firebase";
 import {useHistory} from 'react-router-dom'
 import Routes from '../constants/routes'
+import {QuestionCircleOutlined} from '@ant-design/icons';
+
 
 
 const Register = () => {
@@ -24,15 +26,15 @@ const Register = () => {
         }
     }
 
-    const getId= async () => {
+    const getId = async () => {
         const user = await FIREBASE.auth.currentUser;
         if (user != null) {
-            const aux= (user.uid);
+            const aux = (user.uid);
             setId(aux);
         }
     }
 
-    const handleSubmit = async ( values) => {
+    const handleSubmit = async (values) => {
         getId();
         console.log("valid_ID:", id)
         console.log('formData:', values);
@@ -50,7 +52,7 @@ const Register = () => {
             <div className='section' id='imgRegister'>
                 <h1 className='hFrm'>FORMULARIO DE REGISTRO</h1>
                 <Row>
-                    <Col span={14} style={{margin: 'auto'}}>
+                    <Col span={10} style={{margin: 'auto'}}>
 
                         <Divider orientation="center">Información de autenticación</Divider>
                         <Form
@@ -166,16 +168,35 @@ const Register = () => {
                             </Form.Item>
                             <Divider orientation="center">Información laboral</Divider>
                             <Form.Item
-                                label='Area Laboral'
-                                name='area'
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: 'Escoga el area de trabajo'
-                                    }
-                                ]}
+                                className="opcSelect"
+                                label={
+                                    <span>
+                                        Perfil Público&nbsp;
+                                        <Tooltip title="¿Deseas que los clientes puedan encontrar tu perfil en las busquedas?">
+                                            <QuestionCircleOutlined />
+                                        </Tooltip>
+                                    </span>
+                                }
+                                name='visible'
                             >
-                                <Select className="opcSelect">
+                                <Select>
+                                    <Select.Option value="true">Si</Select.Option>
+                                    <Select.Option value="false">No</Select.Option>
+                                </Select>
+                            </Form.Item>
+                            <Form.Item
+                                className="opcSelect"
+                                label={
+                                    <span>
+                                        Área laboral&nbsp;
+                                        <Tooltip title="Escoge una de las opciones para que los clientes puedan encontrarte más rápido">
+                                            <QuestionCircleOutlined />
+                                        </Tooltip>
+                                    </span>
+                                }
+                                name='area'
+                            >
+                                <Select>
                                     <Select.Option value="Albañileria">Albañilería</Select.Option>
                                     <Select.Option value="Carpinteria">Carpintería</Select.Option>
                                     <Select.Option value="Cerrajeria">Cerrajería</Select.Option>
