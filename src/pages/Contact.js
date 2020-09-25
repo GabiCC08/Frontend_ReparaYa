@@ -46,7 +46,7 @@ const Contact = () => {
 
                             <Form.Item
                                 name="phone"
-                                label="Telefono"
+                                label="Teléfono"
                                 rules={[{ required: true, message: 'Por favor, ingrese su número telefónico.' }]}
                             >
                                 <Input  style={{ width: '100%' }} />
