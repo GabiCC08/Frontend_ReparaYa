@@ -10,7 +10,7 @@ import salud from "../images/salud.png";
 import logo from "../images/logo-saturated.png";
 import epn from "../images/logo_epn.svg";
 import help from "../images/settings.png";
-import study from "../images/reading-list.png";
+import study from "../images/busy.png";
 
 const {Content} = Layout;
 
@@ -59,86 +59,72 @@ const HomeContent = () => {
                 <div className='section'>
                     <Carousel autoplay effect="fade">
                         <div className='contentStyle' id='crs1'>
-                            <h1 className="title-Crs text-Crs">¿NECESITAS CONTRATAR PERSONAL CUALIFICADO?</h1>
+                            <h2 className="title-Crs text-Crs" >¿NECESITAS CONTRATAR PERSONAL CUALIFICADO?</h2>
                             <Row justify="space-around" align="middle">
-                                <Col className="colCrs">
-                                    <div className="contentInfo">
-                                        <img className='crsLogo' src={help} alt=""/>
-                                        <h2 className="description-Crs text-Crs">
-                                            ¿Necesitas reparar algo o mantenimiento del hogar?<br/>
-                                            Aquí encontraras los mejores profesionales.<br/>
-                                            ÚNETE A NUESTRA COMUNIDAD
-                                        </h2>
-                                    </div>
+                                <Col>
+                                    <img className='crsLogo' src={help} alt=""/>
+                                </Col>
+                                <Col>
+                                    <h3 className="description-Crs text-Crs">¿Tienes problemas con tus electrodomésticos?<br/>
+                                        ¿Quieres dar mantenimiento a tu hogar?<br/>
+                                        Aquí encontraras al mejor profesional<br/>
+                                        Únete a nuestra comunidad</h3>
                                 </Col>
                             </Row>
                         </div>
                         <div className='contentStyle' id='crs2'>
-                            <h1 className="title-Crs text-Crs">TESTIMONIO</h1>
+                            <h2 className="title-Crs text-Crs" >TESTIMONIO</h2>
                             <Row justify="space-around" align="middle">
-                                <Col className="colCrs">
-                                    <div className="contentInfo">
-                                        <Row>
-                                            <Col span={10}>
-                                                <img className='imgCrs'
-                                                     src='https://images.unsplash.com/photo-1587403655231-b1734312903f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'
-                                                     alt='USER'/>
-                                            </Col>
-                                            <Col span={14}>
-                                                <h2 className="description-Crs text-Crs">
-                                                    "Soy Carmen, usuario de esta plataforma.
-                                                    Hace unas semanas necesitaba con urgencia contratar pintores,
-                                                    publique mis requerimientos e inmediatamente recibí asistencia
-                                                    profesional.
-                                                    Reparaya facilita muchísimo las contrataciones laborales"
-                                                </h2>
-                                            </Col>
-                                        </Row>
-                                    </div>
+                                <Col>
+                                    <img className='imgCrs'
+                                         src='https://images.unsplash.com/photo-1587403655231-b1734312903f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'
+                                         alt='USER'/>
+                                </Col>
+                                <Col>
+                                    <h3 className="description-Crs text-Crs">
+                                        "Soy Carmen, usuario de esta plataforma, hace unas semanas
+                                        necesitaba con urgencia contratar pintores, publique mis
+                                        requerimientos e inmediatamente recibí asistencia
+                                        profesional.<br/>
+                                        Reparaya facilita muchísimo las contrataciones laborales"
+                                    </h3>
                                 </Col>
                             </Row>
 
                         </div>
                         <div className='contentStyle' id='crs3'>
 
-                            <h1 className="title-Crs text-Crs">¿NO ENCUENTRAS TRABAJO?</h1>
+                            <h2 className="title-Crs text-Crs" >¿NO ENCUENTRAS TRABAJO?</h2>
                             <Row justify="space-around" align="middle">
-                                <Col className="colCrs">
-                                    <div className="contentInfo">
-                                        <img className='crsLogo' src={study} alt=""/>
-                                        <h2 className="description-Crs text-Crs">
-                                            ¿No cuentas con estudios universitarios?<br/>
-                                            ¿Deseas llegar a más clientes?<br/>
-                                            Comparte tu perfil laboral aquí, encontraremos un empleo acorde
-                                            a tus habilidades.<br/>
-                                            ÚNETE A NUESTRA COMUNIDAD
-                                        </h2>
-                                    </div>
+                                <Col>
+                                    <img className='crsLogo' src={study} alt=""/>
+                                </Col>
+                                <Col>
+                                    <h3 className="description-Crs text-Crs">¿No cuentas con estudios universitarios?<br/>
+                                        Comparte tu perfil laboral aquí, encontraremos un empleo acorde
+                                        a tus habilidades<br/>
+                                        Únete a nuestra comunidad!</h3>
                                 </Col>
                             </Row>
                         </div>
                         <div className='contentStyle' id='crs4'>
-                            <h1 className="title-Crs text-Crs">TESTIMONIO</h1>
+                            <h2 className="title-Crs text-Crs" >TESTIMONIO</h2>
                             <Row justify="space-around" align="middle">
-                                <Col className="colCrs">
-                                    <div className="contentInfo">
-                                        <Row>
-                                            <Col span={10}>
-                                                <img className='imgCrs'
-                                                     src='https://images.unsplash.com/photo-1541577141970-eebc83ebe30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'
-                                                     alt='USER'/>
-                                            </Col>
-                                            <Col span={14}>
-                                                <h2 className="description-Crs text-Crs">
-                                                    "Mi nombre es Diego y me dedico a la
-                                                    carpintería. Empece a usar esta página hace unos meses y
-                                                    definitivamente me ha ayudado a llegar a más clientes con mucha
-                                                    más facilidad. Cuento con un pequeño taller y trabajo de la mano con
-                                                    esta plataforma. Es muy fácil de usar, la recomiendo."
-                                                </h2>
-                                            </Col>
-                                        </Row>
-                                    </div>
+                                <Col>
+                                    <img className='imgCrs'
+                                         src='https://images.unsplash.com/photo-1541577141970-eebc83ebe30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'
+                                         alt='USER'/>
+                                </Col>
+                                <Col>
+                                    <h3 className="description-Crs text-Crs">
+                                        "Mi nombre es Diego y me dedico al oficio de la
+                                        carpintería.<br/>
+                                        Empece a usar esta página hace unos meses y definitivamente
+                                        me ha ayudado a llegar a más clientes con mucha más facilidad.
+                                        Cuento con un pequeño taller y trabajo de la mano con esta
+                                        plataforma.<br/>
+                                        Es muy fácil de usar, la recomiendo."
+                                    </h3>
                                 </Col>
                             </Row>
                         </div>
@@ -148,7 +134,7 @@ const HomeContent = () => {
                 <div className='section' id='publi'>
                     <h1>¿QUÉ TE OFRECEMOS?</h1>
                     <Row gutter={[8, 8]} justify="space-between" align="middle">
-                        <Col>
+                        <Col >
                             <div className="infoList">
                                 <img className='icons' src={feliz} alt='icon1'/>
                                 <div>
@@ -161,7 +147,7 @@ const HomeContent = () => {
                         <Col>
                             <div className="infoList">
                                 <img className='icons' src={lugar} alt='icon5'/>
-                                <div>
+                                <div >
                                     <h3>Define tu sector geográfico de trabajo</h3>
                                     <span>Recibe ofertas laborales de tus alrededores.</span><br/>
                                     <span>Busca trabajos cercanos a tu residencia.</span>
@@ -215,7 +201,7 @@ const HomeContent = () => {
                     <h1>CONÓCENOS</h1>
 
                     <Card id='cardAcerca' bordered={false}>
-                        <Row gutter={{xs: 8, sm: 16, md: 24, lg: 32}} justify="space-around">
+                        <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} justify="space-around">
                             <Col>
                                 <div className="contact-info">
                                     <img className='logoAbout' src={logo} alt='LOGO'/>
@@ -245,7 +231,7 @@ const HomeContent = () => {
                 </div>
 
                 <div className='section' id='contac'>
-                    <h1 className='hFrm' style={{textAlign: 'Center'}}>CONTÁCTANOS</h1>
+                    <h1 id='hFrm' style={{textAlign: 'Center'}}>CONTÁCTANOS</h1>
                     <Form>
                         <Row>
                             <Col span={12} style={{margin: 'auto'}}>
