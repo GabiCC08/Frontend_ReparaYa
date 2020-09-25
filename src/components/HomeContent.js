@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Card, Carousel, Col, Form, Input, Layout, Row} from "antd";
+import {Button, Card, Carousel, Col, Form, Input, Layout, message, Row} from "antd";
 import imgInicio from "../images/imgInicio.svg";
 import feliz from "../images/feliz.png";
 import busca from "../images/busca.png";
@@ -11,10 +11,18 @@ import logo from "../images/logo-saturated.png";
 import epn from "../images/logo_epn.svg";
 import help from "../images/settings.png";
 import study from "../images/busy.png";
+import FIREBASE from "../firebase";
 
 const {Content} = Layout;
 
 const HomeContent = () => {
+
+    const handleSubmit= async (values)=>{
+        console.log('datos de la base de Datos')
+        await FIREBASE.db.ref('mailbox').push(values);
+        message.success('Los datos se guardaron correctamente');
+    }
+
     return (
         <Content>
             <div className="site-layout-content">
@@ -232,7 +240,7 @@ const HomeContent = () => {
 
                 <div className='section' id='contac'>
                     <h1 id='hFrm' style={{textAlign: 'Center'}}>CONTÁCTANOS</h1>
-                    <Form>
+                    <Form onFinish={handleSubmit}>
                         <Row>
                             <Col span={12} style={{margin: 'auto'}}>
                                 <Form.Item name={['name']} label="Nombre Completo"
