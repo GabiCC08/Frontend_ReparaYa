@@ -17,7 +17,7 @@ const Contact = () => {
     return (
         <div>
             <SimpleHeader/>
-            <div className='section' id='Contact-Form'>
+            <div className='section' id='Contact-Form' style={{background: '#3291a7'}}>
                 <h1 className='hFrm' style={{textAlign: 'Center'}}>CONTÁCTANOS</h1>
                 <div id='content-parra'>
                     <p style={{margin: '0px'}}>
