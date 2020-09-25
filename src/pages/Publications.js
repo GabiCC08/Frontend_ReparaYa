@@ -1,14 +1,17 @@
 import React from 'react';
 import SimpleHeader from "../components/SimpleHeader";
 import { Form, Input, Select, Upload, Button , message,Col,Row} from "antd";
-import { UploadOutlined, InboxOutlined } from '@ant-design/icons';
-import Routes from "../constants/routes";
-import {Link} from "react-router-dom";
+import { InboxOutlined } from '@ant-design/icons';
 import '../styles/Publications.less'
 import FIREBASE from "../firebase";
+import {Link, useHistory} from 'react-router-dom'
+import Routes from '../constants/routes'
+
 
 
 const Publications = () => {
+
+    const history = useHistory();
 
     const normFile = e => {
         console.log('Upload event:', e);
@@ -28,12 +31,14 @@ const Publications = () => {
         console.log('datos de la base de Datos')
         await FIREBASE.db.ref('publicaciones').push({...values,photo: imageURL});
         message.success('Los datos se guardaron correctamente');
+        history.push(Routes.PROFILE)
     }
 
     return(
         <>
             <SimpleHeader/>
             <div className="main-publications" id='publicationForm'>
+                <Link to={Routes.PROFILE}><Button type="link">Volver</Button></Link>
                 <h1 className='hFrm' style={{textAlign: 'Center',fontsize:'10px'}}>Crea una publicación</h1>
                 <Form
                     name='publications-form'
@@ -41,7 +46,6 @@ const Publications = () => {
                 >
                     <Row>
                         <Col span={12} style={{margin: 'auto'}}>
-                            <Form>
                                 <Form.Item name={['tittle']} label="Titulo de la publicación"
                                            rules={[{required: true, message: 'Por favor, ingresa un titulo para la publicacion.'}]}>
                                     <Input/>
@@ -125,17 +129,11 @@ const Publications = () => {
                                     <Button  type="primary" htmlType="submit" style={{float: 'rigth'}}>
                                         Registrar
                                     </Button>
-                                    <Link to={Routes.PROFILE}><Button>
-                                        Regresar
-                                    </Button></Link>
                                 </Form.Item>
-                            </Form>
-
                         </Col>
                     </Row>
                 </Form>
             </div>
-
         </>
     )
 };
