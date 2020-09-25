@@ -246,7 +246,7 @@ const HomeContent = () => {
                 </div>
 
                 <div className='section' id='contac'>
-                    <h1 id='hFrm' style={{textAlign: 'Center'}}>CONTÁCTANOS</h1>
+                    <h1 className='hFrm' style={{textAlign: 'Center'}}>CONTÁCTANOS</h1>
                     <Form>
                         <Row>
                             <Col span={12} style={{margin: 'auto'}}>
