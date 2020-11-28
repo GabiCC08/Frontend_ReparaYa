@@ -8,7 +8,6 @@ import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 import Profile from "../pages/Profile";
 import Register from "../pages/Register";
-import Publications from "../pages/Publications";
 import Login from "../pages/Login";
 
 const AppRouter = () => {
@@ -36,10 +35,6 @@ const AppRouter = () => {
             </Route>
             <Route path={Routes.PROFILE} >
                 <Profile />
-                <GeneralFooter />
-            </Route>
-            <Route path={Routes.PUBLICATION} >
-                <Publications />
                 <GeneralFooter />
             </Route>
             <Route path={Routes.LOGIN} >

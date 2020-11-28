@@ -7,7 +7,6 @@ const publicRoutes = {
   CONTACT: '/contacto',
   REGISTER: '/registro',
   PROFILE: '/perfil',
-  PUBLICATION:'/publicaciones'
 };
 
 const privateRoutes = {
